@@ -8,21 +8,26 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
-    @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html #index.html.erb
-      format.json { render json: @product}
-  end
-
+  
   def new
     @product = Product.new
 
     respond_to do |format|
-      format.html #index.html.erb
-      format.json { render json: @product}
+      format.html # new.html.erb
+      format.json { render json: @product }
+    end
   end
+  
+
+  def show
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @product}
+    end
+  end
+
 
   def create
     @product = Product.new(params[:product])
@@ -35,6 +40,7 @@ class ProductsController < ApplicationController
       format.html { render action: "new" }
       format.json { render json: @products.errors, status: :unprocessable_entity }
     end
+   end
   end
 
   def edit
@@ -52,6 +58,7 @@ class ProductsController < ApplicationController
       format.html { render action: "edit" }
       format.json { render json: @products.errors, status: :unprocessable_entity }
     end
+   end
   end
 
   def destroy
@@ -61,5 +68,8 @@ class ProductsController < ApplicationController
       respond_to do |format|
       format.html { redirect_to products_url }
       format.json { head :no_content } 
+    end
+  
   end
+
 end
