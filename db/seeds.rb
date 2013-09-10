@@ -13,6 +13,6 @@ Product.create!(
 Product.create!(
 	name: "Product3", 
 	description: "a third product", 
-	price_in_cents: 4000
+	price_in_cents: 4099
 	)
 

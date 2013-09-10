@@ -2,6 +2,7 @@
 
 <li><%= @product[:name] %></li>
 <li><%= @product[:description] %></li>
-<li>$<%= @product[:price_in_cents].to_f / 100 %></li>
+<li><%= "$" + @product.formatted_price %></li>
 
-<%= link_to "<< Back", products_path %>
+<p><%= link_to "<< Back", products_path %>  |  
+<%= link_to "Delete", @product, :confirm => "Are you sure you want to delete this product?", :method => :delete %></p>
