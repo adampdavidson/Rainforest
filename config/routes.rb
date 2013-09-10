@@ -1,5 +1,9 @@
 Rainforest::Application.routes.draw do
 
+  get "users/new"
+
+  get "users/create"
+
  # get '/products' => 'products#index', as :products
  # post '/products' => 'products#create'
  # get '/products/new' => 'products#new' as :new_product
@@ -10,6 +14,7 @@ Rainforest::Application.routes.draw do
 
 
  resources :products 
+ resources :users, :only => [:new, :create]
 
   root :to => "products#index"
 
