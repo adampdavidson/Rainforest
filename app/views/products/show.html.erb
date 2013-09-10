@@ -1,0 +1,7 @@
+<h1>Product <%= @product[:id] %></h1>
+
+<li><%= @product[:name] %></li>
+<li><%= @product[:description] %></li>
+<li>$<%= @product[:price_in_cents].to_f / 100 %></li>
+
+<%= link_to "<< Back", products_path %>
